@@ -1,4 +1,5 @@
 {% load static %}
+{% if user.is_authenticated %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,4 +56,8 @@
 </body>
 
 <script src="{% static 'js/script.js' %}"></script>
+</html>
+{% else %}
+ <meta http-equiv="refresh" content="0; url={% url 'login' %}" />
+{% endif %}
 </html>
